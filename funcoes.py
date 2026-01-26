@@ -25,10 +25,10 @@ def inicia_jogo (jogadores,tabuleiro):
         for lista in tabuleiro:
             while len('jogador'[jogador]) < 8:
                 if jogador not in resto['jogadores']:
-                    'jogador'[jogador] = lista
+                    resto['jogador'][jogador] = lista
                     tabuleiro.remove(lista)
                 else:
-                    'jogadores'[jogador].append(lista)
+                    resto['jogadores'][jogador].append(lista)
                     tabuleiro.remove(lista)
                 
     resto['monte'] = tabuleiro
