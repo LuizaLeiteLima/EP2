@@ -27,10 +27,12 @@ def inicia_jogo (jogadores,tabuleiro):
         if jogador not in resto['jogadores']:
             resto['jogadores'][jogador] = []
 
-    for lista in tabuleiro[:]:
-        if pecas > len(resto['jogadores'][jogador]):
-            resto['jogadores'][jogador].append(lista)
-            tabuleiro.remove(lista)
+
+    for jogador in resto['jogadores']:
+        for lista in tabuleiro[:]:
+            if pecas > len(resto['jogadores'][jogador]):
+                resto['jogadores'][jogador].append(lista)
+                tabuleiro.remove(lista)
                 
     resto['monte'] = tabuleiro
     return resto
