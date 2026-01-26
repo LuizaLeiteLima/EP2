@@ -14,5 +14,26 @@ def cria_pecas ():
     shuffle(pecas)
     return pecas
 
+def inicia_jogo (jogadores,tabuleiro):
+
+    resto = {'jogadores':{},
+             'monte':'',
+             'mesa': []
+             }
+
+    for jogador in range(0,jogadores):
+        for lista in tabuleiro:
+            while len('jogador'[jogador]) < 8:
+                if jogador not in resto['jogadores']:
+                    'jogador'[jogador] = lista
+                    tabuleiro.remove(lista)
+                else:
+                    'jogadores'[jogador].append(lista)
+                    tabuleiro.remove(lista)
+                
+    resto['monte'] = tabuleiro
+    return resto
+
+
 
 
