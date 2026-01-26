@@ -20,10 +20,12 @@ def inicia_jogo (jogadores,tabuleiro):
              'monte':'',
              'mesa': []
              }
+    
+    pecas = 7
 
     for jogador in range(0,jogadores):
         for lista in tabuleiro:
-            while len('jogador'[jogador]) < 8:
+            while pecas > len(resto['jogador'][jogador]):
                 if jogador not in resto['jogadores']:
                     resto['jogador'][jogador] = lista
                     tabuleiro.remove(lista)
