@@ -25,9 +25,9 @@ def inicia_jogo (jogadores,tabuleiro):
 
     for jogador in range(0,jogadores):
         for lista in tabuleiro:
-            while pecas > len(resto['jogador'][jogador]):
+            while pecas > len(resto['jogadores'][jogador]):
                 if jogador not in resto['jogadores']:
-                    resto['jogador'][jogador] = lista
+                    resto['jogadores'][jogador] = lista
                     tabuleiro.remove(lista)
                 else:
                     resto['jogadores'][jogador].append(lista)
