@@ -1,16 +1,16 @@
+from random import*
+from math import*
+
 def cria_pecas ():
 
     pecas = []
 
-    while len(pecas) < 28:
-        adiciona = []
-        for numero in range(0,6):
-            if len(adiciona) < 2:
-                adiciona.append(numero)
-            if len(adiciona) == 2:
-                if adiciona not in pecas:
-                    pecas.append(adiciona)
+ 
+    for numero in range(0,7):
+        for numero2 in range(0,7):
+            pecas.append([numero,numero2])
 
+    random.shuffle(pecas)
     return pecas
 
 
