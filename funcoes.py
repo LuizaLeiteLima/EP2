@@ -10,7 +10,7 @@ def cria_pecas ():
         for numero2 in range(0,7):
             pecas.append([numero,numero2])
 
-    random.shuffle(pecas)
+    pecas = shuffle(pecas)
     return pecas
 
 
