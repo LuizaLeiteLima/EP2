@@ -40,7 +40,7 @@ def inicia_jogo (jogadores,tabuleiro):
 
 
 def verifica_ganhador(jogadores):
-    for jogador, pecas in jogadores:
+    for jogador, pecas in jogadores.items():
         if pecas == 0:
             return jogador
         
