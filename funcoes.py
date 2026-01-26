@@ -46,7 +46,3 @@ def verifica_ganhador(jogadores):
         
     return -1
 
-def conta_pontos(joga):
-
-
-
