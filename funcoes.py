@@ -82,11 +82,11 @@ def adiciona_na_mesa(peca_col,lista_pecas):
         saida = [peca_col, *lista_pecas]
     elif esq_peca == lista_pecas[-1][1]:
         saida = lista_pecas
-        saida = saida.append(peca_col)
+        saida.append(peca_col)
     elif dir_peca == lista_pecas[0][0]:
         saida = [peca_col, *lista_pecas]
     elif dir_peca == lista_pecas[-1][1]:
         peca_col = peca_col[::-1]
         saida = lista_pecas
-        saida = saida.append(peca_col)
+        saida.append(peca_col)
     return saida
