@@ -68,7 +68,7 @@ def posicoes_possiveis(estado_mesa,lista_pecas):
 def adiciona_na_mesa(peca_col,lista_pecas):
     saida = []
     if len(lista_pecas)==0:
-        saida = saida.append(peca_col)
+        saida.append(peca_col)
         return saida
     
     esq = lista_pecas[0][0]
@@ -90,4 +90,3 @@ def adiciona_na_mesa(peca_col,lista_pecas):
         saida = lista_pecas
         saida = saida.append(peca_col)
     return saida
-
