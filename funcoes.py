@@ -43,6 +43,6 @@ def verifica_ganhador(jogadores):
     for jogador, pecas in jogadores.items():
         if len(pecas) == 0:
             return jogador
-        
+    #teste  
     return -1
 
