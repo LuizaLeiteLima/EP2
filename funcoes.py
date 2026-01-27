@@ -46,3 +46,9 @@ def verifica_ganhador(jogadores):
     #teste  
     return -1
 
+def conta_pontos(lista_pecas):
+    soma = 0
+    for lista_pontos in lista_pecas:
+        for i in range(len(lista_pontos)):
+            soma+=lista_pontos[i]
+    return soma
