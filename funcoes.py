@@ -52,3 +52,15 @@ def conta_pontos(lista_pecas):
         for i in range(len(lista_pontos)):
             soma+=lista_pontos[i]
     return soma
+
+def posicoes_possiveis(estado_mesa,lista_pecas):
+    lista_ind = [] 
+    for i in range(len(lista_pecas)):
+        if len(estado_mesa)==0:
+            lista_ind.append(i)
+        else:
+            esq = estado_mesa[0][0]
+            dir = estado_mesa[-1][1]
+            if lista_pecas[i][0]==dir or lista_pecas[i][1]==dir or lista_pecas[i][0]==esq or lista_pecas[i][1]==esq:
+                lista_ind.append(i)
+    return lista_ind
