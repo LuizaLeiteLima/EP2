@@ -9,11 +9,11 @@ while jogar == "sim":
     quantidade_jogadores = int(input("Quantos jogadores vão joga (2-4)? "))
     
 
-    estado_do_jogo = inicia_jogo(quantidade_jogadores, pecas_do_tabuleiro)
+    estado = inicia_jogo(quantidade_jogadores, pecas_do_tabuleiro)
     
-    lista_jogadores = estado_do_jogo['jogadores']
-    monte = estado_do_jogo['monte']
-    mesa = estado_do_jogo['mesa']
+    lista_jogadores = estado['jogadores']
+    monte = estado['monte']
+    mesa = estado['mesa']
     
     vencedor = -1
     quem_joga= 0
