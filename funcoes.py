@@ -90,3 +90,11 @@ def adiciona_na_mesa(peca_col,lista_pecas):
         saida = lista_pecas
         saida.append(peca_col)
     return saida
+
+
+def desenha(lista_de_pecas):
+    visual = ""
+    for peca in lista_de_pecas:
+        # Monta o desenho com um traço
+        visual = visual + "[" + str(peca[0]) + "|" + str(peca[1]) + "] "
+    return visual
