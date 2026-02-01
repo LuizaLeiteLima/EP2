@@ -68,3 +68,28 @@ while jogar == "sim":
     quem_joga = quem_joga + 1
     if quem_joga >= quantidade_jogadores:
         quem_joga = 0
+
+    
+    if vencedor != -1:
+        print("\no jogador", vencedor, "venceu o jogo")
+    else:
+        print("\no jogo travou")
+        print("contando pontos para ver quem ganha")
+        
+        menor_ponto = 1000
+        ganhador_final = -1
+        
+        for i in range(quantidade_jogadores):
+            pontos_do_cara = conta_pontos(lista_jogadores[i])
+            print("Jogador", i, "ficou com", pontos_do_cara, "pontos.")
+            
+            if pontos_do_cara < menor_ponto:
+                menor_ponto = pontos_do_cara
+                ganhador_final = i
+        
+        print("o vencedor pelos pontos foi o jogador:", ganhador_final)
+
+    # Pergunta se quer comecar tudo de novo
+    quer_jogar = input("\nquer jogar de novo? (sim/nao): ")
+
+print("obrigado por jogar!")
