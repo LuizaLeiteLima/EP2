@@ -52,3 +52,19 @@ while jogar == "sim":
                 peca_escolhida = minhas_pecas[escolha]
                 minhas_pecas.remove(peca_escolhida)
                 mesa = adiciona_na_mesa(peca_escolhida, mesa)
+            else:
+                indice_pc = opcoes[0]
+                peca_pc = minhas_pecas[indice_pc]
+                minhas_pecas.remove(peca_pc)
+                mesa = adiciona_na_mesa(peca_pc, mesa)
+                print("o computador jogou a peca:", peca_pc)
+                
+    else:
+        print("o jogador", quem_joga, "nao tem o que jogar e passou a vez")
+        trava_jogo = trava_jogo + 1
+        
+    vencedor = verifica_ganhador(lista_jogadores)
+
+    quem_joga = quem_joga + 1
+    if quem_joga >= quantidade_jogadores:
+        quem_joga = 0
