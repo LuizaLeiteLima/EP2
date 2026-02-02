@@ -16,8 +16,13 @@ while jogar == "sim":
     trava_jogo = 0 
     
     while vencedor == -1 and trava_jogo < quantidade_jogadores:
+        print("----------------------------------------")
         print("vez do jogador", quem_joga)
-        print("Mesa atual:", desenha(mesa))
+        
+        visual_mesa = ""
+        for p in mesa:
+            visual_mesa = visual_mesa + "[" + str(p[0]) + "|" + str(p[1]) + "] "
+        print("Mesa atual:", visual_mesa)
         
         minhas_pecas = lista_jogadores[quem_joga]
         opcoes = posicoes_possiveis(mesa, minhas_pecas)
@@ -31,9 +36,14 @@ while jogar == "sim":
 
         if len(opcoes) > 0:
             trava_jogo = 0
+            
             if quem_joga == 0:
-                print("suas pecas sao:", desenha(minhas_pecas))
+                visual_minhas = ""
+                for p in minhas_pecas:
+                    visual_minhas = visual_minhas + "[" + str(p[0]) + "|" + str(p[1]) + "] "
+                print("suas pecas sao:", visual_minhas)
                 print("indices das pecas que voce pode jogar:", opcoes)
+                
                 escolha = int(input("qual o indice da peca que voce quer jogar? "))
                 
                 while escolha not in opcoes:
@@ -48,29 +58,32 @@ while jogar == "sim":
                 peca_pc = minhas_pecas[indice_pc]
                 minhas_pecas.remove(peca_pc)
                 mesa = adiciona_na_mesa(peca_pc, mesa)
-                print("o computador jogou a peca:", desenha([peca_pc]))
+                print("o computador jogou a peca: [" + str(peca_pc[0]) + "|" + str(peca_pc[1]) + "]")
         else:
             print("o jogador", quem_joga, "nao tem o que jogar e passou a vez")
             trava_jogo = trava_jogo + 1
             
         vencedor = verifica_ganhador(lista_jogadores)
+        
         quem_joga = quem_joga + 1
         if quem_joga >= quantidade_jogadores:
             quem_joga = 0
 
     if vencedor != -1:
-        print("o jogador", vencedor, "venceu o jogo")
+        print("O JOGADOR", vencedor, "VENCEU O JOGO!")
     else:
-        print("o jogo travou")
-        print("contando pontos para ver quem ganha")
+        print("O jogo travou!")
         menor_ponto = 1000
         ganhador_final = -1
+        
         for i in range(quantidade_jogadores):
             pontos_do_cara = conta_pontos(lista_jogadores[i])
             print("Jogador", i, "ficou com", pontos_do_cara, "pontos.")
+            
             if pontos_do_cara < menor_ponto:
                 menor_ponto = pontos_do_cara
                 ganhador_final = i
+        
         print("o vencedor pelos pontos foi o jogador:", ganhador_final)
 
     jogar = input("quer jogar de novo? (sim/nao): ")
